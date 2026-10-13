@@ -2,7 +2,7 @@
 @font-face{font-family:FiraGO;src:url(fonts/FiraGO-Medium.woff2);font-weight:500;font-display:swap}
 @font-face{font-family:FiraGO;src:url(fonts/FiraGO-Bold.woff2);font-weight:700;font-display:swap}
 @font-face{font-family:FiraGO;src:url(fonts/FiraGO-ExtraBold.woff2);font-weight:800;font-display:swap}
-:root{--b:#0072B4;--b2:#2f93d3;--b3:#7cc0ea;--navy:#06305a;--t:#4FC4CB;--ice:#eef6fc;--ice2:#d9eaf7;--ink:#0b2540;--mut:#5d7790;--line:#d5e5f2;--r:28px;--sh:0 18px 50px -24px rgba(6,48,90,.35);--grad:linear-gradient(135deg,#0072B4 0%,#2f93d3 70%,#58b1e6 100%)}
+:root{--b:#0072B4;--b2:#2f93d3;--b3:#7cc0ea;--navy:#06305a;--t:#4FC4CB;--ice:#eef6fc;--ice2:#d9eaf7;--ink:#0a3a6e;--mut:#5d7790;--line:#d5e5f2;--r:28px;--sh:0 18px 50px -24px rgba(6,48,90,.35);--grad:linear-gradient(135deg,#0072B4 0%,#2f93d3 70%,#58b1e6 100%)}
 *{box-sizing:border-box;margin:0}
 [hidden]{display:none!important}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -548,3 +548,12 @@ details.fq summary{font-weight:500}
 
 .nw .cv em{position:absolute;left:24px;top:20px;font-style:normal;display:inline-flex;gap:6px;align-items:center;background:rgba(255,255,255,.2);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.45);border-radius:99px;padding:5px 14px 5px 10px;font-size:14px;font-weight:500;font-feature-settings:'case' 1;letter-spacing:.04em}
 .nw .cv em i{font-size:18px}
+
+/* header search: white pill, icon as a small blue disc drawn in CSS */
+.hsearch{background:#fff;border:1px solid var(--line);border-radius:99px;padding:0 14px 0 5px;height:44px;width:176px;gap:10px}
+.hsearch:focus-within{width:240px;outline:0;border-color:var(--b)}
+.hsearch>i{flex:none;position:relative;width:34px;height:34px;border-radius:50%;background:var(--b);font-size:0;transition:transform .3s}
+.hsearch>i::before{content:''!important;position:absolute;left:10px;top:10px;width:10px;height:10px;border:2px solid #fff;border-radius:50%;opacity:1}
+.hsearch>i::after{content:''!important;position:absolute;left:20.5px;top:19px;width:2px;height:7px;border-radius:2px;background:#fff;transform:rotate(-45deg);transform-origin:50% 0;opacity:1}
+.hsearch:focus-within>i{transform:rotate(90deg)}
+.hsearch input{color:var(--ink)}.hsearch input::placeholder{color:var(--mut)}
