@@ -111,3 +111,19 @@ $$('[data-showall]').forEach(b => b.addEventListener('click', () => { $$('.cats'
 if (matchMedia('(min-width:761px)').matches) $$('.duo details').forEach(d => d.open = true);
 // footer link groups collapse on phones
 if (matchMedia('(max-width:760px)').matches) $$('footer .g > div:not(.lg)').forEach(g => { const h = g.querySelector('h4'); if (!h) return; g.classList.add('fg'); h.addEventListener('click', () => g.classList.toggle('open')); });
+
+// sphere bubbles: overlay sits on the glass sphere of the hero photo (sphere centre 68.5%,51% of the image, radius 8.5% of its width)
+function placeOrb() {
+  const h = document.querySelector('.hero2'), o = document.querySelector('.hero2 .orb'), img = document.querySelector('.hero2 .mhero');
+  if (!h || !o || !img) return;
+  const b = img.getBoundingClientRect(), hb = h.getBoundingClientRect(), IW = 1024, IH = 572, phone = matchMedia('(max-width:760px)').matches;
+  if (!b.width) return;
+  const k = Math.max(b.width / IW, b.height / IH), w = IW * k, hh = IH * k;   // object-fit: cover
+  const ax = phone ? .6 : 1, ay = phone ? .42 : .5;                           // object-position
+  const ox = (b.width - w) * ax, oy = (b.height - hh) * ay;
+  const cx = ox + w * .685, cy = oy + hh * .51, r = w * .085;
+  o.style.left = (b.left - hb.left + cx - r) + 'px'; o.style.top = (b.top - hb.top + cy - r) + 'px'; o.style.width = 2 * r + 'px'; o.style.fontSize = (2 * r / 12) + 'px';
+  o.classList.add('on');
+}
+['DOMContentLoaded', 'load', 'resize'].forEach(ev => addEventListener(ev, () => requestAnimationFrame(placeOrb)));
+placeOrb(); setTimeout(placeOrb, 300); setTimeout(placeOrb, 1000);
