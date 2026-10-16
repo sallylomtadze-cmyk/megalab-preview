@@ -106,3 +106,8 @@ if (y0) addEventListener('load', () => { $$('.rv').forEach(r => r.classList.add(
 
 // phone: category lists start short, one tap shows the rest
 $$('[data-showall]').forEach(b => b.addEventListener('click', () => { $$('.cats').forEach(c => c.classList.remove('more')); b.remove(); }));
+
+// JCI facts: open on desktop, tap-to-open on phones
+if (matchMedia('(min-width:761px)').matches) $$('.duo details').forEach(d => d.open = true);
+// footer link groups collapse on phones
+if (matchMedia('(max-width:760px)').matches) $$('footer .g > div:not(.lg)').forEach(g => { const h = g.querySelector('h4'); if (!h) return; g.classList.add('fg'); h.addEventListener('click', () => g.classList.toggle('open')); });

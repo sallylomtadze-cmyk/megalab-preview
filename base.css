@@ -643,7 +643,7 @@ details.fq summary{font-weight:500}
  .hero2 .h2top{position:absolute;left:12px;right:12px;top:12px;z-index:3;border:0;padding:0}
  .hero2 .h2top .tagp{background:rgba(7,26,51,.55);font-size:11.5px;padding:6px 11px}
  .hero2 .h2main{display:block;margin:0;padding:16px 16px 18px;position:relative}
- .hero2 .h2main::before{content:'';display:block;height:210px;margin:-16px -16px 16px;background:url(img/hero-dna.jpg) 60% 42%/cover no-repeat;border-radius:22px 22px 0 0}
+ .hero2 .mhero{display:block;width:calc(100% + 32px);height:210px;margin:-16px -16px 16px;object-fit:cover;object-position:60% 42%;border-radius:22px 22px 0 0;order:0}
  .hero2 .orb{left:49.4%;top:58px;width:41%}
  .hero2 h1{font-size:25px;line-height:1.16}.hero2 h1 span{display:inline}
  .hero2 .h2p{margin-top:8px;font-size:13.5px;color:#cfe4f7}
@@ -700,3 +700,30 @@ details.fq summary{font-weight:500}
 .hero2 .orb i:nth-child(1){--x:12%;--s:.9em;--t:7s;--d:-1s}.hero2 .orb i:nth-child(2){--x:30%;--s:.55em;--t:9s;--d:-4s}.hero2 .orb i:nth-child(3){--x:48%;--s:.9em;--t:8s;--d:-2s}.hero2 .orb i:nth-child(4){--x:66%;--s:.7em;--t:10s;--d:-6s}.hero2 .orb i:nth-child(5){--x:80%;--s:.6em;--t:7.5s;--d:-3s}.hero2 .orb i:nth-child(6){--x:22%;--s:.45em;--t:11s;--d:-7s}.hero2 .orb i:nth-child(7){--x:58%;--s:.45em;--t:6.5s;--d:-5s}.hero2 .orb i:nth-child(8){--x:40%;--s:.8em;--t:9.5s;--d:-8s}.hero2 .orb i:nth-child(9){--x:72%;--s:.8em;--t:8.5s;--d:-1.5s}.hero2 .orb i:nth-child(10){--x:8%;--s:.55em;--t:10.5s;--d:-9s}.hero2 .orb i:nth-child(11){--x:88%;--s:.45em;--t:7.2s;--d:-2.5s}.hero2 .orb i:nth-child(12){--x:52%;--s:.6em;--t:9.8s;--d:-6.5s}
 @media(min-width:1100px){.hero2 .orb{font-size:13px}}
 @media(max-width:760px){.hero2 .orb{font-size:8px}}
+
+.mhero{display:none}
+/* number bubbles: softer, no hard rim */
+.stat .bead{box-shadow:inset 0 0 0 1px rgba(255,255,255,.45),inset 0 -16px 28px -12px rgba(0,114,180,.38),inset 0 10px 20px -8px rgba(255,255,255,.85),0 18px 34px -22px rgba(6,48,90,.45)}
+.stat .bead::before{-webkit-mask:radial-gradient(circle,transparent 70%,#000 84%,transparent 100%);mask:radial-gradient(circle,transparent 70%,#000 84%,transparent 100%);filter:blur(1.5px)}
+@media(max-width:760px){
+ .hero2 .h2main{padding-top:0}
+ .hero2 .h2main .h2l{padding:0 16px}.hero2 .h2act{padding:0 16px 18px}
+ .hero2 .h2main .mhero{margin:0 0 16px;width:100%}
+ /* JCI: accordion rows closed, bigger tap target */
+ .duo details summary{font-size:15px;padding:13px 0}.duo details div{font-size:13.5px}
+ .duo .ph2{min-height:140px}
+ /* footer: logo + contact, link groups fold */
+ footer{padding:22px 18px 16px;border-radius:22px}
+ footer .g{display:block}
+ footer .lg{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:8px}
+ footer .lg img{height:30px}footer .lg p{display:none}footer .soc{margin:0 0 0 auto}footer .soc a{width:36px;height:36px;font-size:17px}
+ footer .fg h4{display:flex;justify-content:space-between;align-items:center;margin:0;padding:13px 0;border-top:1px solid rgba(255,255,255,.12);cursor:pointer;font-size:12.5px;color:#cfe4f7}
+ footer .fg h4::after{content:'+';font-size:18px;color:#8fb3d4}
+ footer .fg.open h4::after{content:'−'}
+ footer .fg a{display:none;font-size:14px;padding:6px 0}
+ footer .fg.open a{display:block}footer .fg.open{padding-bottom:8px}
+ footer .fg .tel{display:block;font-size:17px;padding:4px 0}
+ footer .fg:has(.tel) h4{border-top:1px solid rgba(255,255,255,.12)}
+ footer .cp{flex-direction:column;gap:8px;align-items:flex-start;font-size:12px;margin-top:12px}
+ footer .cp span a{display:inline-block;margin-right:12px}
+}
