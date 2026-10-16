@@ -573,8 +573,8 @@ details.fq summary{font-weight:500}
 .hero2 .pills{display:flex;gap:8px}
 .hero2 .pills a{display:inline-flex;gap:8px;align-items:center;height:38px;padding:0 16px;border-radius:12px;background:rgba(7,26,51,.55);border:1px solid rgba(255,255,255,.14);font-size:13px;font-weight:500;letter-spacing:.04em;font-feature-settings:'case' 1;transition:background .2s}
 .hero2 .pills a:hover{background:rgba(7,26,51,.85)}
-.hero2 .h2main{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(20px,3vw,48px);align-items:end;position:relative;z-index:2}
-.hero2 h1{font-size:clamp(28px,4vw,58px);font-weight:500;line-height:1.1;letter-spacing:0;color:#fff}
+.hero2 .h2main{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,52%) auto;justify-content:space-between;gap:clamp(20px,3vw,48px);align-items:end;position:relative;z-index:2}
+.hero2 h1{font-size:clamp(28px,3.5vw,50px);font-weight:500;line-height:1.1;letter-spacing:0;color:#fff;max-width:11ch}
 .hero2 h1 span{color:#fff}
 .hero2 h1 br+span{color:#bfe3fa}
 .hero2 .big-s{margin-top:26px;max-width:520px;display:flex;background:rgba(255,255,255,.14);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.28);border-radius:99px;padding:5px}
