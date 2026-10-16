@@ -8,7 +8,7 @@ const io = new IntersectionObserver(es => es.forEach(e => {
   if (!e.isIntersecting) return;
   e.target.classList.add('in'); io.unobserve(e.target);
   if (e.target.dataset.count) count(e.target);
-}), { threshold: .12 });
+}), { threshold: 0, rootMargin: '0px 0px -8% 0px' });
 function reveal(root = document) {
   $$('.rv:not(.in)', root).forEach(el => {
     if (!el.style.getPropertyValue('--i')) el.style.setProperty('--i', [...el.parentNode.children].filter(c => c.classList.contains('rv')).indexOf(el) % 8);
@@ -103,3 +103,6 @@ function openPkg(p) {
 // ?y=1200 opens the page already scrolled there (screenshots, recordings)
 const y0 = new URLSearchParams(location.search).get('y');
 if (y0) addEventListener('load', () => { $$('.rv').forEach(r => r.classList.add('in')); scrollTo({ top: +y0, behavior: 'instant' }); });
+
+// phone: category lists start short, one tap shows the rest
+$$('[data-showall]').forEach(b => b.addEventListener('click', () => { $$('.cats').forEach(c => c.classList.remove('more')); b.remove(); }));
