@@ -599,9 +599,8 @@ details.fq summary{font-weight:500}
 /* micro bubbles drifting inside the glass sphere of the background image */
 .hero2 .orb{position:absolute;left:53.8%;top:36%;width:17.4%;aspect-ratio:1;border-radius:50%;overflow:hidden;pointer-events:none;z-index:1;opacity:0!important;animation:none!important;transform:none!important}
 .hero2.in .orb{opacity:1!important}
-.hero2 .orb i{position:absolute;left:var(--x);bottom:-8%;width:var(--s);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 30%,rgba(255,255,255,.9),rgba(255,255,255,.35) 40%,rgba(255,255,255,.05) 70%);box-shadow:inset 0 0 2px rgba(255,255,255,.6);animation:orb var(--t) ease-in-out var(--d) infinite}
-.hero2 .orb i:nth-child(1){--x:12%;--s:5%;--t:7s;--d:-1s}.hero2 .orb i:nth-child(2){--x:30%;--s:3%;--t:9s;--d:-4s}.hero2 .orb i:nth-child(3){--x:48%;--s:6%;--t:8s;--d:-2s}.hero2 .orb i:nth-child(4){--x:66%;--s:4%;--t:10s;--d:-6s}.hero2 .orb i:nth-child(5){--x:80%;--s:3.5%;--t:7.5s;--d:-3s}.hero2 .orb i:nth-child(6){--x:22%;--s:2.5%;--t:11s;--d:-7s}.hero2 .orb i:nth-child(7){--x:58%;--s:2.5%;--t:6.5s;--d:-5s}.hero2 .orb i:nth-child(8){--x:40%;--s:4.5%;--t:9.5s;--d:-8s}.hero2 .orb i:nth-child(9){--x:72%;--s:5.5%;--t:8.5s;--d:-1.5s}.hero2 .orb i:nth-child(10){--x:8%;--s:3%;--t:10.5s;--d:-9s}.hero2 .orb i:nth-child(11){--x:88%;--s:2.5%;--t:7.2s;--d:-2.5s}.hero2 .orb i:nth-child(12){--x:52%;--s:3.5%;--t:9.8s;--d:-6.5s}
-@keyframes orb{0%{transform:translate(0,0) scale(.6);opacity:0}15%{opacity:.9}50%{transform:translate(-10px,-55%) scale(1)}85%{opacity:.8}100%{transform:translate(8px,-110%) scale(1.1);opacity:0}}
+.hero2 .orb i{position:absolute;left:var(--x);bottom:-8%;width:var(--s);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 38% 34%,rgba(255,255,255,.95) 0,rgba(255,255,255,.45) 28%,rgba(220,240,255,.12) 60%,rgba(255,255,255,0) 100%);filter:blur(.7px);animation:orb var(--t) ease-in-out var(--d) infinite,fizz calc(var(--t)/3) ease-in-out var(--d) infinite}
+.hero2 .orb i:nth-child(3n)::after{content:'';position:absolute;inset:-40%;background:radial-gradient(circle,rgba(255,255,255,.9) 0,rgba(255,255,255,0) 55%);opacity:0;animation:spark calc(var(--t)/2) ease-in-out var(--d) infinite}
 @media(max-width:900px){.hero2 .orb{display:none}.hero2 .h2act .btn.w{width:100%}}
 
 @media(max-width:760px){
