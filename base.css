@@ -603,7 +603,7 @@ details.fq summary{font-weight:500}
 .hero2 .h2act .big-s{margin:0;flex:1 1 320px;max-width:460px}
 .hero2 .h2act .btn.w{border-radius:99px;height:50px}
 /* micro bubbles drifting inside the glass sphere of the background image */
-.hero2 .orb{position:absolute;left:53.8%;top:36%;width:17.4%;aspect-ratio:1;font-size:15px;border-radius:50%;overflow:hidden;pointer-events:none;z-index:1;opacity:1!important;animation:none!important;transform:none!important}
+.hero2 .orb{position:absolute;left:53.8%;top:36%;width:17.4%;aspect-ratio:1;font-size:15px;container-type:size;border-radius:50%;overflow:hidden;pointer-events:none;z-index:1;opacity:1!important;animation:none!important;transform:none!important}
 .hero2 .orb i{position:absolute;left:var(--x);bottom:4%;width:var(--s);height:var(--s);border-radius:50%;
  background:radial-gradient(circle at 36% 32%,#fff 0,rgba(255,255,255,.95) 22%,rgba(255,255,255,.5) 48%,rgba(255,255,255,.12) 70%,rgba(255,255,255,.45) 92%,rgba(255,255,255,0) 100%);
  box-shadow:0 0 4px rgba(255,255,255,.45),inset 0 0 1.5px rgba(255,255,255,.9);
@@ -732,3 +732,7 @@ details.fq summary{font-weight:500}
 }
 
 .hero2 .orb i:nth-child(1){--x:12%;--s:0.9em;--t:7.0s;--d:-0.00s}.hero2 .orb i:nth-child(2){--x:30%;--s:0.6em;--t:7.9s;--d:-0.55s}.hero2 .orb i:nth-child(3){--x:48%;--s:0.95em;--t:8.8s;--d:-1.10s}.hero2 .orb i:nth-child(4){--x:66%;--s:0.7em;--t:9.7s;--d:-1.65s}.hero2 .orb i:nth-child(5){--x:80%;--s:0.65em;--t:10.6s;--d:-2.20s}.hero2 .orb i:nth-child(6){--x:22%;--s:0.5em;--t:7.0s;--d:-2.75s}.hero2 .orb i:nth-child(7){--x:58%;--s:0.5em;--t:7.9s;--d:-3.30s}.hero2 .orb i:nth-child(8){--x:40%;--s:0.8em;--t:8.8s;--d:-3.85s}.hero2 .orb i:nth-child(9){--x:72%;--s:0.85em;--t:9.7s;--d:-4.40s}.hero2 .orb i:nth-child(10){--x:8%;--s:0.6em;--t:10.6s;--d:-4.95s}.hero2 .orb i:nth-child(11){--x:88%;--s:0.5em;--t:7.0s;--d:-5.50s}.hero2 .orb i:nth-child(12){--x:52%;--s:0.65em;--t:7.9s;--d:-6.05s}.hero2 .orb i:nth-child(13){--x:35%;--s:0.75em;--t:8.8s;--d:-6.60s}.hero2 .orb i:nth-child(14){--x:64%;--s:0.55em;--t:9.7s;--d:-7.15s}
+
+@keyframes orb{0%{translate:0 0;scale:.7;opacity:0}8%{opacity:1}50%{translate:-7px -5em;scale:1}92%{opacity:1}100%{translate:6px -10.5em;scale:1.06;opacity:0}}
+@keyframes fizz{0%,100%{filter:brightness(1)}50%{filter:brightness(1.6) drop-shadow(0 0 4px #fff)}}
+@keyframes spark{0%,70%,100%{opacity:0;transform:scale(.4)}80%{opacity:.9;transform:scale(1)}}
