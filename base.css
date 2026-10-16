@@ -556,3 +556,31 @@ details.fq summary{font-weight:500}
 .hsearch>i::before,.hsearch>i::after{content:none!important}
 .hsearch:hover>i,.hsearch:focus-within>i{transform:scale(1.1) rotate(-8deg)}
 .hsearch input{color:var(--ink)}.hsearch input::placeholder{color:var(--mut)}
+
+/* hero2: deep blue stage with glass DNA (reference: lab hero, white type on blue) */
+.hero.hero2{display:flex;flex-direction:column;justify-content:space-between;min-height:min(680px,calc(100vh - 130px));padding:clamp(22px,3vw,40px) clamp(24px,3.6vw,52px) clamp(26px,3.4vw,48px);color:#fff;border:0;background:linear-gradient(180deg,rgba(0,80,150,.28),rgba(8,46,92,.5)),url(img/hero-dna.jpg) right center/cover no-repeat #0b3a6e;box-shadow:0 40px 80px -50px rgba(6,40,80,.8)}
+.hero2 .h2top{display:flex;justify-content:space-between;align-items:center;gap:14px;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,.16);position:relative;z-index:2}
+.hero2 .tagp{display:inline-flex;gap:8px;align-items:center;font-size:13px;font-weight:500;background:rgba(255,255,255,.12);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);border-radius:99px;padding:7px 14px}
+.hero2 .pills{display:flex;gap:8px}
+.hero2 .pills a{display:inline-flex;gap:8px;align-items:center;height:38px;padding:0 16px;border-radius:12px;background:rgba(7,26,51,.55);border:1px solid rgba(255,255,255,.14);font-size:13px;font-weight:500;letter-spacing:.04em;font-feature-settings:'case' 1;transition:background .2s}
+.hero2 .pills a:hover{background:rgba(7,26,51,.85)}
+.hero2 .h2main{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,.75fr) auto;gap:clamp(20px,3vw,48px);align-items:end;position:relative;z-index:2}
+.hero2 h1{font-size:clamp(28px,4vw,58px);font-weight:500;line-height:1.1;letter-spacing:0;color:#fff}
+.hero2 h1 span{color:#fff}
+.hero2 h1 br+span{color:#bfe3fa}
+.hero2 .big-s{margin-top:26px;max-width:520px;display:flex;background:rgba(255,255,255,.14);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.28);border-radius:99px;padding:5px}
+.hero2 .big-s input{flex:1;border:0;outline:0;background:none;color:#fff;padding:0 18px;min-width:0}
+.hero2 .big-s input::placeholder{color:rgba(255,255,255,.7)}
+.hero2 .big-s .btn{border-radius:99px;background:#fff;color:var(--b)}
+.hero2 .h2r{display:grid;gap:20px;justify-items:start;padding-bottom:4px}
+.hero2 .h2r p{font-size:15px;line-height:1.6;color:#dceefc;max-width:32ch}
+.hero2 .h2r .btn.w{border-radius:99px}
+.hero2 .explore{width:132px;height:132px;border-radius:50%;background:#fff;color:var(--ink);display:grid;place-content:center;justify-items:center;gap:6px;font-size:12.5px;font-weight:600;letter-spacing:.08em;font-feature-settings:'case' 1;box-shadow:0 20px 40px -18px rgba(0,0,0,.45);transition:transform .4s cubic-bezier(.3,1.5,.5,1)}
+.hero2 .explore i{font-size:28px;color:var(--b);transition:transform .6s}
+.hero2 .explore:hover{transform:scale(1.07)}.hero2 .explore:hover i{transform:rotate(180deg)}
+.hero2 .glass>*{opacity:1}
+.hero2 .h2main>*,.hero2 .h2top{opacity:0;transform:translateY(18px)}
+.hero2.in .h2top,.hero2.in .h2main>*{animation:up .9s cubic-bezier(.2,.8,.2,1) both}
+.hero2.in .h2main>:nth-child(2){animation-delay:.15s}.hero2.in .h2main>:nth-child(3){animation-delay:.3s}
+@media(max-width:900px){.hero.hero2{min-height:0;padding-bottom:30px;background-position:70% center}.hero2 .h2main{grid-template-columns:minmax(0,1fr);margin-top:150px}.hero2 h1{font-size:30px}.hero2 .big-s{max-width:100%}.hero2 .pills{display:none}.hero2 .explore{width:104px;height:104px;justify-self:end;margin-top:-90px}}
+@media(prefers-reduced-motion:reduce){.hero2 .h2main>*,.hero2 .h2top{opacity:1;transform:none}}
